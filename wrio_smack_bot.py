@@ -303,6 +303,23 @@ async def skip(ctx):
     else:
         await ctx.send("Нічого не грає!")
 
+
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Бот живий!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+Thread(target=run).start()
+
+
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot.run(TOKEN)
+
