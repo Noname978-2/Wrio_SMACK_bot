@@ -23,7 +23,7 @@ intents.voice_states = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-DATA_FILE  = 'C:\wrio_bot\Wrio_SMACK_bot\smack_stat.json'
+DATA_FILE  = 'smack_stat.json'
 
 def load_stats():
     if os.path.exists(DATA_FILE):
@@ -132,7 +132,7 @@ async def wrio_neuvi(ctx):
             'executable': 'ffmpeg.exe'
         }
 
-        audio_path = os.path.abspath('C:\wrio_bot\Wrio_SMACK_bot\euvi_OGG.ogg')  
+        audio_path = os.path.abspath('euvi_OGG.ogg')  
         if voice is None:
             voice = await ctx.author.voice.channel.connect(timeout=30.0, reconnect=True)
         elif voice.channel != ctx.author.voice.channel:
